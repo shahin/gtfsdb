@@ -154,7 +154,7 @@ class _Base(object):
 
             i = 0
             for row in reader:
-                records.append(cls.make_record(row))
+                records.append({k: None if v == '' else v for k, v in cls.make_record(row).items()})
                 i += 1
                 if i >= batch_size:
                     db.engine.execute(table.insert(), records)
