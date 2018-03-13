@@ -77,3 +77,6 @@ def db_connect_tester():
     for st in stop_times:
         print(st.get_direction_name())
         break
+
+if __name__ == '__main__':
+    gtfsdb_load()
